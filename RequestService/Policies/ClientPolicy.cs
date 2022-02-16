@@ -3,11 +3,11 @@
 using Polly;
 using Polly.Retry;
 
-public class ClientPolicies
+public class ClientPolicy
 {
     public AsyncRetryPolicy<HttpResponseMessage> ImmidateHttpRetryPolicy { get; }
 
-    public ClientPolicies()
+    public ClientPolicy()
     {
         ImmidateHttpRetryPolicy = Policy
             .HandleResult<HttpResponseMessage>(
